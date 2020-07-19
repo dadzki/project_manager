@@ -1,0 +1,14 @@
+docker run --rm php:7.2-cli php -v
+clear && docker run --rm --workdir=/var php:7.2-cli ls
+
+docker run --rm -v ${PWD}/manager:/app --workdir=/app php:7.2-cli php manager/bin/app.php
+
+docker run --rm -v ${PWD}/manager/public:/var/www/html -p 8080:80 php:7.2-apache
+----------------------
+
+docker build --file=manager/Dockerfile --tag manager-php-cli manager
+docker run --rm manager-php-cli php bin/app.php
+
+
+
+
