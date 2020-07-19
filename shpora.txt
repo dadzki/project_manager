@@ -20,3 +20,5 @@ REGISTRY_ADDRESS=registry IMAGE_TAG=0 make build-production
 -----------------------
 
 docker-compose run --rm manager-php-cli composer create-project symfony/website-skeleton skeleton
+
+docker-compose run --rm manager-php-cli composer remove symfony/web-profiler-bundle
