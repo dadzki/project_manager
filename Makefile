@@ -1,37 +1,33 @@
-dev-up:
-	docker run -d --name manager-apache -v ${PWD}/manager:/app -p 8080:80 manager-apache
-	docker network create app
-	docker run -d --name manager-php-fpm -v ${PWD}/manager:/app --network=app manager-php-fpm
-	docker run -d --name manager-nginx -v ${PWD}/manager:/app -p 8080:80 --network=app manager-nginx
+up: docker-up
+init: docker-down docker-pull docker-build docker-up
 
-dev-down:
-	docker stop manager-apache
-	docker rm manager-apache
-	docker stop manager-nginx
-	docker stop manager-php-fpm
-	docker rm manager-nginx
-	docker rm manager-php-fpm
-	docker network remove app
+docker-up:
+	docker-compose up -d
+docker-down:
+	docker-compose down --remove-orphans
+docker-pull:
+	docker-compose pull
+docker-build:
+	docker-compose build
 
-dev-build:
-	docker build --file=manager/docker/development/nginx.docker --tag manager-nginx manager/docker/development
-	docker build --file=manager/docker/development/php-fpm.docker --tag manager-php-fpm manager/docker/development
-	docker build --file=manager/docker/development/php-cli.docker --tag manager-php-cli manager/docker/development
-	docker build --file=manager/docker/development/apache.docker --tag manager-apache manager/docker/development
+cli:
+	docker-compose run --rm manager-php-cli php bin/app.php
+	docker-compose run --rm manager-php-cli php bin/app.php
 
-dev-cli:
-	docker run --rm -v ${PWD}/manager:/app manager-php-cli php bin/app.php
+build-production:
+	docker build --pull --file=manager/docker/production/nginx.docker --tag ${REGISTRY_ADDRESS}/manager-nginx:${IMAGE_TAG} manager
+	docker build --pull --file=manager/docker/production/php-fpm.docker --tag ${REGISTRY_ADDRESS}/manager-php-fpm:${IMAGE_TAG} manager
+	docker build --pull --file=manager/docker/production/php-cli.docker --tag ${REGISTRY_ADDRESS}/manager-php-cli:${IMAGE_TAG} manager
 
-prod-up:
-	docker run -d --name manager-apache -p 8080:80 manager-apache
-	docker run -d --name manager-php-fpm manager-php-fpm
-	docker run -d --name manager-nginx -p 8080:80 manager-nginx
+push-production:
+	docker push ${REGISTRY_ADDRESS}/manager-nginx:${IMAGE_TAG}
+	docker push ${REGISTRY_ADDRESS}/manager-php-fpm:${IMAGE_TAG}
+	docker push ${REGISTRY_ADDRESS}/manager-php-cli:${IMAGE_TAG}
 
-prod-build:
-	docker build --file=manager/docker/production/nginx.docker --tag manager-nginx manager
-	docker build --file=manager/docker/production/php-fpm.docker --tag manager-php-fpm manager
-	docker build --file=manager/docker/production/php-cli.docker --tag manager-php-cli manager
-	docker build --file=manager/docker/production/apache.docker --tag manager-apache manager
-
-prod-cli:
-	docker run --rm manager-php-cli php bin/app.php
+deploy-production:
+	ssh ${PRODUCTION_HOST} -p ${PRODUCTION_PORT} 'rm -rf docker-compose.yml .env'
+	scp -P ${PRODUCTION_PORT} docker-compose-production.yml ${PRODUCTION_HOST}:docker-compose.yml
+	ssh ${PRODUCTION_HOST} -p ${PRODUCTION_PORT} 'echo "REGISTRY_ADDRESS=${REGISTRY_ADDRESS}" >> .env'
+	ssh ${PRODUCTION_HOST} -p ${PRODUCTION_PORT} 'echo "IMAGE_TAG=${IMAGE_TAG}" >> .env'
+	ssh ${PRODUCTION_HOST} -p ${PRODUCTION_PORT} 'docker-compose pull'
+	ssh ${PRODUCTION_HOST} -p ${PRODUCTION_PORT} 'docker-compose --build -d'
