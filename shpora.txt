@@ -10,5 +10,13 @@ docker build --file=manager/Dockerfile --tag manager-php-cli manager
 docker run --rm manager-php-cli php bin/app.php
 
 
+docker-compose run --rm manager-php-cli composer require slim/slim
+-----------------------
 
+для прода
 
+REGISTRY_ADDRESS=registry IMAGE_TAG=0 make build-production
+
+-----------------------
+
+docker-compose run --rm manager-php-cli composer create-project symfony/website-skeleton skeleton
