@@ -107,6 +107,7 @@
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/web-link" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/web-profiler-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfonycasts/verify-email-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/twig/extra-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/twig/twig" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/webimpress/safe-writer" />

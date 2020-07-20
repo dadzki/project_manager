@@ -111,6 +111,7 @@
       <path value="$PROJECT_DIR$/manager/vendor/twig/extra-bundle" />
       <path value="$PROJECT_DIR$/manager/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/manager/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/manager/vendor/symfonycasts/verify-email-bundle" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
