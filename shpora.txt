@@ -26,6 +26,8 @@ docker-compose run --rm manager-php-cli composer remove symfony/web-profiler-bun
 
 --------------------------------------------------------------------------------------------
 
+docker-compose run --rm manager-php-cli php bin/console
+
 docker-compose run --rm manager-php-cli php bin/console make:entity
 docker-compose run --rm manager-php-cli php bin/console make:migration
 
