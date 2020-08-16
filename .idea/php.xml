@@ -112,7 +112,10 @@
       <path value="$PROJECT_DIR$/manager/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/manager/vendor/symfony/web-profiler-bundle" />
       <path value="$PROJECT_DIR$/manager/vendor/symfonycasts/verify-email-bundle" />
+      <path value="$PROJECT_DIR$/manager/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/manager/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/manager/vendor/brick/math" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
 </project>

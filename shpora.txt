@@ -23,6 +23,7 @@ docker-compose run --rm manager-php-cli composer create-project symfony/website-
 
 docker-compose run --rm manager-php-cli composer remove symfony/web-profiler-bundle
 
+docker-compose run --rm manager-php-cli composer require ramsey/uuid
 
 --------------------------------------------------------------------------------------------
 
@@ -33,3 +34,5 @@ docker-compose run --rm manager-php-cli php bin/console make:migration
 
 docker-compose run --rm manager-php-cli php bin/console make:user
 docker-compose run --rm manager-php-cli php bin/console make:auth
+
+--------------------------------------------------------------------------------------------

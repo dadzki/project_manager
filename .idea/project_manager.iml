@@ -2,6 +2,11 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/manager/tests" isTestSource="true" packagePrefix="App\Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/manager/src" isTestSource="false" packagePrefix="App\" />
+      <excludeFolder url="file://$MODULE_DIR$/manager/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/doctrine/annotations" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/doctrine/cache" />
@@ -39,6 +44,8 @@
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/psr/http-server-middleware" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/psr/link" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/manager/vendor/ramsey/collection" />
+      <excludeFolder url="file://$MODULE_DIR$/manager/vendor/ramsey/uuid" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/sensio/framework-extra-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/slim/slim" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/asset" />
