@@ -43,11 +43,11 @@ class SignUpController extends AbstractController
                 $this->logger->error($e->getMessage(), ['exception' => $e]);
                 $this->addFlash('error', $e->getMessage());
             }
-
-            return $this->render('app/auth/signup.html.twig', [
-                'form' => $form->createView(),
-            ]);
         }
+
+        return $this->render('app/auth/signup.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
 
     /**
