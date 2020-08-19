@@ -48,6 +48,7 @@
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/ramsey/uuid" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/sensio/framework-extra-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/slim/slim" />
+      <excludeFolder url="file://$MODULE_DIR$/manager/vendor/swiftmailer/swiftmailer" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/asset" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/browser-kit" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/cache" />
@@ -104,6 +105,7 @@
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/service-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/stopwatch" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/swiftmailer-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/translation" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/translation-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/twig-bridge" />
