@@ -5,7 +5,16 @@ declare(strict_types=1);
 namespace App\Model\User\Entity\User;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
+ * @ORM\Table(name="user_users", uniqueConstraints={
+ *     @ORM\UniqueConstraint(columns={"email"}),
+ *     @ORM\UniqueConstraint(columns={"reset_token_token"})
+ * })
+ */
 class User
 {
     protected const STATUS_NEW = 'new';
@@ -13,36 +22,50 @@ class User
     protected const STATUS_ACTIVE = 'active';
 
     /**
-     * @var Id
+     * @ORM\Column(type="user_user_id")
+     * @ORM\Id
      */
     protected $id;
     /**
      * @var \DateTimeImmutable
+     * @ORM\Column(type="datetime_immutable")
      */
     protected $date;
     /**
      * @var Email|null
+     * @ORM\Column(type="user_user_email", nullable=true)
      */
     protected $email;
     /**
      * @var string|null
+     * @ORM\Column(type="string", name="password_hash", nullable=true)
      */
     protected $passwordHash;
     /**
      * @var string|null
+     * @ORM\Column(type="string", name="confirm_token", nullable=true)
      */
     protected $confirmToken;
     /**
      * @var ResetToken|null
+     * @ORM\Embedded(class="ResetToken", columnPrefix="reset_token_")
      */
     protected $resetToken;
     /**
      * @var string
+     * @ORM\Column(type="string", length=16)
      */
     protected $status;
 
     /**
+     * @var Role
+     * @ORM\Column(type="user_user_role", length=16)
+     */
+    protected $role;
+
+    /**
      * @var Network[]|ArrayCollection
+     * @ORM\OneToMany(targetEntity="Network", mappedBy="user", orphanRemoval=true, cascade={"persist"})
      */
     protected $networks;
 
@@ -58,6 +81,7 @@ class User
     {
         $this->id = $id;
         $this->date = $date;
+        $this->role = Role::user();
         $this->networks = new ArrayCollection();
     }
 
@@ -115,6 +139,14 @@ class User
         }
         $this->passwordHash = $hash;
         $this->resetToken = null;
+    }
+
+    public function changeRole(Role $role): void
+    {
+        if ($this->role->isEqual($role)) {
+            throw new \DomainException('Role is already same.');
+        }
+        $this->role = $role;
     }
 
     public function isNew(): bool
@@ -177,6 +209,11 @@ class User
         return $this->resetToken;
     }
 
+    public function getRole(): Role
+    {
+        return $this->role;
+    }
+
     /**
      * @return Network[]
      */
@@ -193,5 +230,15 @@ class User
 
         $this->status = self::STATUS_ACTIVE;
         $this->confirmToken = null;
+    }
+
+    /**
+     * @ORM\PostLoad()
+     */
+    public function checkEmbeds(): void
+    {
+        if ($this->resetToken->isEmpty()) {
+            $this->resetToken = null;
+        }
     }
 }
