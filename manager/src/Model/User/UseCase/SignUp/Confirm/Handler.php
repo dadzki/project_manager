@@ -33,7 +33,7 @@ class Handler
             throw new \DomainException('Incorrect or confirmed token.');
         }
 
-        $user->getConfirmToken();
+        $user->confirmSignUp();
 
         $this->flusher->flush();
     }

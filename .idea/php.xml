@@ -117,6 +117,7 @@
       <path value="$PROJECT_DIR$/manager/vendor/brick/math" />
       <path value="$PROJECT_DIR$/manager/vendor/symfony/swiftmailer-bundle" />
       <path value="$PROJECT_DIR$/manager/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/manager/vendor/finesse/swiftmailer-defaults-plugin" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

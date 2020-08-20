@@ -10,6 +10,7 @@ services:
       - manager-php-fpm
     ports:
       - "8080:80"
+
   manager-php-fpm:
     build:
       context: ./manager/docker/development
@@ -18,6 +19,8 @@ services:
       - ./manager:/app
     depends_on:
       - manager-postgres
+      - mailer
+
   manager-php-cli:
     build:
       context: ./manager/docker/development
@@ -27,16 +30,23 @@ services:
       - composer:/root/.composer/cache
     depends_on:
       - manager-postgres
+      - mailer
+
   manager-postgres:
     image: postgres:11.2-alpine
     volumes:
-      - manager-postgres:/var/lib/postgresql/data
+      - ./manager/db:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: app
       POSTGRES_PASSWORD: secret
       POSTGRES_DB: app
     ports:
       - "54321:5432"
+
+  mailer:
+    image: mailhog/mailhog
+    ports:
+      - "8081:8025"
 
 volumes:
   manager-postgres:
