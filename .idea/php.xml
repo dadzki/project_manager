@@ -74,6 +74,7 @@
       <path value="$PROJECT_DIR$/manager/vendor/symfony/string" />
       <path value="$PROJECT_DIR$/manager/vendor/symfony/polyfill-intl-icu" />
       <path value="$PROJECT_DIR$/manager/vendor/ocramius/proxy-manager" />
+      <path value="$PROJECT_DIR$/manager/vendor/symfony/inflector" />
       <path value="$PROJECT_DIR$/manager/vendor/symfony/intl" />
       <path value="$PROJECT_DIR$/manager/vendor/symfony/dependency-injection" />
       <path value="$PROJECT_DIR$/manager/vendor/symfony/framework-bundle" />
@@ -109,6 +110,7 @@
       <path value="$PROJECT_DIR$/manager/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/manager/vendor/twig/extra-bundle" />
       <path value="$PROJECT_DIR$/manager/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/manager/vendor/symfony/web-profiler-bundle" />
       <path value="$PROJECT_DIR$/manager/vendor/symfonycasts/verify-email-bundle" />
       <path value="$PROJECT_DIR$/manager/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/manager/vendor/ramsey/collection" />
@@ -118,14 +120,6 @@
       <path value="$PROJECT_DIR$/manager/vendor/finesse/swiftmailer-defaults-plugin" />
       <path value="$PROJECT_DIR$/manager/vendor/doctrine/doctrine-fixtures-bundle" />
       <path value="$PROJECT_DIR$/manager/vendor/doctrine/data-fixtures" />
-      <path value="$PROJECT_DIR$/manager/vendor/psr/http-client" />
-      <path value="$PROJECT_DIR$/manager/vendor/knpuniversity/oauth2-client-bundle" />
-      <path value="$PROJECT_DIR$/manager/vendor/guzzlehttp/promises" />
-      <path value="$PROJECT_DIR$/manager/vendor/guzzlehttp/guzzle" />
-      <path value="$PROJECT_DIR$/manager/vendor/guzzlehttp/psr7" />
-      <path value="$PROJECT_DIR$/manager/vendor/league/oauth2-client" />
-      <path value="$PROJECT_DIR$/manager/vendor/ralouphie/getallheaders" />
-      <path value="$PROJECT_DIR$/manager/vendor/league/oauth2-facebook" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

@@ -1,6 +1,0 @@
-security:
-    encoders:
-        App\Security\UserIdentity: argon2i
-    firewalls:
-        main:
-            http_basic: ~
