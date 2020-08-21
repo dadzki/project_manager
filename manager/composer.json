@@ -12,6 +12,8 @@
         "doctrine/doctrine-migrations-bundle": "^3.0",
         "doctrine/orm": "^2.7",
         "finesse/swiftmailer-defaults-plugin": "^2.0",
+        "knpuniversity/oauth2-client-bundle": "^2.2",
+        "league/oauth2-facebook": "^2.0",
         "phpdocumentor/reflection-docblock": "^5.1",
         "ramsey/uuid": "^4.1",
         "sensio/framework-extra-bundle": "^5.1",

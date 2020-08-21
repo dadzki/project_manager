@@ -28,9 +28,15 @@
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/doctrine/sql-formatter" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/egulias/email-validator" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/finesse/swiftmailer-defaults-plugin" />
+      <excludeFolder url="file://$MODULE_DIR$/manager/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/manager/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/manager/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/manager/vendor/knpuniversity/oauth2-client-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/laminas/laminas-code" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/laminas/laminas-eventmanager" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/laminas/laminas-zendframework-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/manager/vendor/league/oauth2-client" />
+      <excludeFolder url="file://$MODULE_DIR$/manager/vendor/league/oauth2-facebook" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/nikic/fast-route" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/nikic/php-parser" />
@@ -41,12 +47,14 @@
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/psr/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/manager/vendor/psr/http-client" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/psr/http-factory" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/psr/http-server-handler" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/psr/http-server-middleware" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/psr/link" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/manager/vendor/ralouphie/getallheaders" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/ramsey/collection" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/ramsey/uuid" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/sensio/framework-extra-bundle" />
@@ -78,7 +86,6 @@
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/http-client-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/http-foundation" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/http-kernel" />
-      <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/intl" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/mailer" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/maker-bundle" />
@@ -117,7 +124,6 @@
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/var-dumper" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/var-exporter" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/web-link" />
-      <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/web-profiler-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/symfonycasts/verify-email-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/manager/vendor/twig/extra-bundle" />
