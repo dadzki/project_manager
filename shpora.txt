@@ -25,6 +25,8 @@ docker-compose run --rm manager-php-cli composer remove symfony/web-profiler-bun
 
 docker-compose run --rm manager-php-cli composer require ramsey/uuid
 
+docker-compose run --rm manager-php-cli composer require encore
+
 --------------------------------------------------------------------------------------------
 
 docker-compose run --rm manager-php-cli php bin/console
