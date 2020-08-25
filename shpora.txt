@@ -33,6 +33,9 @@ docker-compose logs manager-node-watch
 
 docker-compose run --rm manager-node yarn add -s bootstrap jquery popper.js
 
+docker-compose run --rm manager-node yarn add -s @coreui/coreui @coreui/chartjs @coreui/icons @coreui/utils @popperjs/core chart.js perfect-scrollbar
+
+
 --------------------------------------------------------------------------------------------
 
 docker-compose run --rm manager-php-cli php bin/console
