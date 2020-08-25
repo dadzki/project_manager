@@ -20,8 +20,8 @@ class HomeTest extends WebTestCase
     public function testSuccess(): void
     {
         $client = static::createClient([], [
-            'PHP_AUTH_USER' => 'admin@app.test',
-            'PHP_AUTH_PW' => 'password',
+            'PHP_AUTH_USER' => 'dadzki@yandex.ru',
+            'PHP_AUTH_PW' => '123456',
         ]);
         $crawler = $client->request('GET', '/');
 

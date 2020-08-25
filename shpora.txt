@@ -27,6 +27,12 @@ docker-compose run --rm manager-php-cli composer require ramsey/uuid
 
 docker-compose run --rm manager-php-cli composer require encore
 
+docker-compose logs manager-node-watch
+
+--------------------------------------------------------------------------------------------
+
+docker-compose run --rm manager-node yarn add -s bootstrap jquery popper.js
+
 --------------------------------------------------------------------------------------------
 
 docker-compose run --rm manager-php-cli php bin/console

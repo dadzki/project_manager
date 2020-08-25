@@ -1,3 +1,4 @@
+/.ready
 
 ###> symfony/framework-bundle ###
 /.env.local

@@ -1,6 +1,7 @@
 up: docker-up
 down: docker-down
-init: docker-down-clear docker-pull docker-build docker-up manager-init
+restart: docker-down docker-up
+init: docker-down-clear manager-clear docker-pull docker-build docker-up manager-init
 test: manager-test
 
 docker-up:
@@ -14,9 +15,17 @@ docker-pull:
 docker-build:
 	docker-compose build
 
-manager-init: manager-composer-install manager-wait-db manager-migrations manager-fixtures
+manager-init: manager-composer-install manager-assets-install manager-wait-db manager-migrations manager-fixtures manager-ready
+
+manager-clear:
+    docker run --rm -v ${PWD}/manager:/app --workdir=/app alpine rm -f .ready
+
 manager-composer-install:
 	docker-compose run --rm manager-php-cli composer install
+
+manager-assets-install:
+	docker-compose run --rm manager-node yarn install
+	docker-compose run --rm manager-node npm rebuild node-sass
 
 manager-fixtures:
 	docker-compose run --rm manager-php-cli php bin/console doctrine:fixtures:load --no-interaction
@@ -24,12 +33,17 @@ manager-fixtures:
 manager-test:
 	docker-compose run --rm manager-php-cli php bin/phpunit
 
+manager-ready:
+	docker run --rm -v ${PWD}/manager:/app --workdir=/app alpine touch .ready
+
 manager-wait-db:
 	until docker-compose exec -T manager-postgres pg_isready --timeout=0 --dbname=app ; do sleep 1 ; done
 
 manager-migrations:
 	docker-compose run --rm manager-php-cli php bin/console doctrine:migrations:migrate --no-interaction
 
+manager-assets-dev:
+	docker-compose run --rm manager-node npm run dev
 
 build-production:
 	docker build --pull --file=manager/docker/production/nginx.docker --tag ${REGISTRY_ADDRESS}/manager-nginx:${IMAGE_TAG} manager
